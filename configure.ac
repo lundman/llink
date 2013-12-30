@@ -1,4 +1,4 @@
-AC_INIT([llink],[2.3.2], [bug-report@lundman.net])
+AC_INIT([llink],[2.3.4], [bug-report@lundman.net])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([foreign])
 # The big search for OpenSSL
