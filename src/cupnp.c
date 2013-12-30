@@ -981,7 +981,7 @@ void cupnp_add_content(CgUpnpAvContentList *parentCon,
 	CgString *fullPathStr;
     CgNetworkInterfaceList *netIfList;
     CgNetworkInterfaceList *netIf;
-#if 0
+#if 1
     char dlnaAttr[CG_UPNPAV_DLNAATTR_MAXLEN];
 #endif
     CgUpnpAvResource *res;
@@ -1082,10 +1082,14 @@ void cupnp_add_content(CgUpnpAvContentList *parentCon,
 
     // fill in mime type
     cg_upnpav_resource_setmimetype(res, mime_type(content->title));
-#if 0
+#if 1
     cg_upnpav_resource_setdlnaattribute(res,
-                                        cg_upnpav_resource_getdlnaattributes(
-                                                                             res, dlnaAttr, sizeof(dlnaAttr)));
+					"DLNA.ORG_PN=*;DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000");
+                                        //cg_upnpav_resource_getdlnaattributes(
+                                        //                                     res, dlnaAttr, sizeof(dlnaAttr)));
+					// cg_upnpav_resource_getdlnaattributesbymimetype(
+					//res, dlnaAttr, sizeof(dlnaAttr)));
+    debugf("[cupnp] added dlna '%s'\n", dlnaAttr);
 #endif
 
     // Alas, setsize() is 32bit only.
@@ -1760,6 +1764,11 @@ void cupnp_register_protocolinfo(void)
         "http-get:*:video/x-mp2t-mphl-188:*",
         //
         "http-get:*:video/mp4:DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01700000000000000000000000000000",
+	"http-get:*:video/x-matroska:DLNA.ORG_PN=MATROSKA;DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000",
+	//"DLNA.ORG_PN=MATROSKA;DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000");
+
+	// If DLNA.ORG_OP=10, then left/rght uses TimeSeekRange.DLNA.ORG header
+	// If DLNA.ORG_OP=01, then left/rght uses range header
         NULL };
     CgUpnpAvProtocolInfo *info;
     char *str, *network, *mime, *extra;
@@ -1856,8 +1865,6 @@ int cupnp_init(void)
     // Do we need this?
     cg_upnp_controlpoint_start(ctrlPoint);
 
-    cg_net_allow_interface("en0");
-
     mediaServer = cg_upnpav_dms_new();
     if (!mediaServer)
         return 0;
@@ -1880,6 +1887,8 @@ int cupnp_init(void)
                                   name);
     cg_upnpav_dms_setudn(mediaServer,
                          ssdp_upnp_uuid);
+    debugf("[cupnp] using name '%s' and uuid '%s'\n",
+	   name, ssdp_upnp_uuid);
 
     useragent_mutex = cg_mutex_new();
 
