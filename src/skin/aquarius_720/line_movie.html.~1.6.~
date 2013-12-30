@@ -1,0 +1,35 @@
+					<tr>
+						<td height="45" BACKGROUND="/block_bg.png">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="text" height="41" width="50" align="center" class="no"><!--LLINK_FILE_TVID--></td>
+									<td class="text" width="50"><img src="/video_icon_<!--LLINK_TEXT_VISITED-->.png" onfocussrc="/transparent.png" width="35" height="35" border="0"/></td>
+									<td class="text"
+									width="548"><a href="<!--LLINK_FILE_URL-->"
+									vod class="<!--LLINK_TEXT_VISITED-->"
+									name="<!--LLINK_FILE_TVID-->"
+									tvid="<!--LLINK_FILE_TVID-->"
+									onfocus="show(((<!--LLINK_FILE_TVID-->+9)%10)+1);loc('<!--LLINK_FILE_SHORT_URL-->?menu');"
+									<!--LLINK_ONKEYUP_PREV-->
+									<!--LLINK_ONKEYDOWN_NEXT-->
+onblur="hide()">
+<!--LLINK_IF_CLIENT_IS_SYABAS-->
+                                      <marquee behavior="focus"
+                                      width="498">
+<!--/LLINK_IF_CLIENT_IS_SYABAS-->
+                                      <!--LLINK_FILE_NAME-->
+<!--LLINK_IF_CLIENT_IS_SYABAS-->
+                                      </marquee>
+                                      <!--/LLINK_IF_CLIENT_IS_SYABAS-->
+                                      </a>
+</td>
+									<td class="text" width="92" align="right" class="text"><!--LLINK_FILE_SIZE--></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="14"></td>
+					</tr>
+
+

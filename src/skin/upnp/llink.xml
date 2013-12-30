@@ -1,0 +1,34 @@
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+   <specVersion>
+      <major>1</major>
+      <minor>0</minor>
+   </specVersion>
+   <device>
+      <UDN>uuid:<!--LLINK_UPNP_UUID--></UDN>
+      <friendlyName><!--LLINK_SERVER--> (Media Server) : 1</friendlyName>
+      <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+      <manufacturer>lundman.net</manufacturer>
+      <manufacturerURL>http://www.lundman.net/</manufacturerURL>
+      <modelName>Windows Media Connect llink</modelName>
+      <modelNumber>2.0</modelNumber>
+      <modelURL>http://www.lundman.net/</modelURL>
+      <serialNumber>LLINK_UPNP_01</serialNumber>
+      <serviceList>
+        <service>
+          <serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+          <serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+          <SCPDURL>/?upnp=scpd.xml</SCPDURL>
+          <controlURL>/?upnp=ContentDirectory_control</controlURL>
+          <eventSubURL>/?upnp=ContentDirectory_event</eventSubURL>
+        </service>
+        <service>
+          <serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+          <serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+          <SCPDURL>/?upnp=conmgr.xml</SCPDURL>
+          <controlURL>/?upnp=ConnectionManager_control</controlURL>
+          <eventSubURL>/?upnp=ConnectionManager_event</eventSubURL>
+        </service>
+      </serviceList>
+   </device>
+</root>
+

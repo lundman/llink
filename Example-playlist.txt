@@ -1,0 +1,10 @@
+You can create playlists for the UPnP devices, which take the syntax
+of:
+
+Pat & Stanley|0|0|http://192.168.0.12:8001/00mvid/pasta/pasta013.avi|
+Pat & Stanley|0|0|http://192.168.0.12:8001/00mvid/pasta/pasta019.avi|
+
+I figured out the bits at one time, but I forget what it was now. Fill
+this information in one day.
+
+Lund

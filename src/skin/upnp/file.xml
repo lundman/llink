@@ -1,0 +1,2 @@
+&lt;item id=&quot;<!--LLINK_FILE_SHORT_URL-->&quot; parentID=&quot;<!--LLINK_PARENT_DIRECTORY-->&quot; restricted=&quot;1&quot;&gt;&lt;dc:title&gt;<!--LLINK_FILE_NAME-->&lt;/dc:title&gt;&lt;upnp:class&gt;<!--LLINK_FILE_UPNP_TYPE-->&lt;/upnp:class&gt;&lt;dc:creator&gt;<!--LLINK_SERVER-->&lt;/dc:creator&gt;&lt;dc:date&gt;<!--LLINK_FILE_DATE-->&lt;/dc:date&gt;&lt;res size=&quot;<!--LLINK_DETAIL_SIZE-->&quot; protocolInfo=&quot;http-get:*:<!--LLINK_FILE_MIME-->:*&quot;&gt;<!--LLINK_FULL_URL--><!--LLINK_FILE_URL-->&lt;/res&gt;&lt;/item&gt;
+

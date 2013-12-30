@@ -1,0 +1,125 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dbm.h" />
+    <ClInclude Include="..\extern.h" />
+    <ClInclude Include="..\gdbm.h" />
+    <ClInclude Include="..\gdbmconst.h" />
+    <ClInclude Include="..\gdbmdefs.h" />
+    <ClInclude Include="..\gdbmerrno.h" />
+    <ClInclude Include="..\getopt.h" />
+    <ClInclude Include="..\ndbm.h" />
+    <ClInclude Include="..\proto.h" />
+    <ClInclude Include="..\systems.h" />
+    <ClInclude Include="autoconf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bucket.c" />
+    <ClCompile Include="..\dbmclose.c" />
+    <ClCompile Include="..\dbmdelete.c" />
+    <ClCompile Include="..\dbmfetch.c" />
+    <ClCompile Include="..\dbmopen.c" />
+    <ClCompile Include="..\dbmstore.c" />
+    <ClCompile Include="..\falloc.c" />
+    <ClCompile Include="..\findkey.c" />
+    <ClCompile Include="..\gdbmclose.c" />
+    <ClCompile Include="..\gdbmerrno.c" />
+    <ClCompile Include="..\gdbmexists.c" />
+    <ClCompile Include="..\gdbmfdesc.c" />
+    <ClCompile Include="..\gdbmfetch.c" />
+    <ClCompile Include="..\gdbmopen.c" />
+    <ClCompile Include="..\gdbmreorg.c" />
+    <ClCompile Include="..\gdbmseq.c" />
+    <ClCompile Include="..\gdbmsetopt.c" />
+    <ClCompile Include="..\gdbmstore.c" />
+    <ClCompile Include="..\gdbmsync.c" />
+    <ClCompile Include="..\global.c" />
+    <ClCompile Include="..\hash.c" />
+    <ClCompile Include="..\update.c" />
+    <ClCompile Include="..\version.c" />
+    <ClCompile Include="win32.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{D200D45D-A941-4B6D-B041-ACD50751DF2C}</ProjectGUID>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>gdbm</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>gdbm</TargetName>
+    <OutDir>Debug</OutDir>
+    <IntDir>.\Debug</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>gdbm</TargetName>
+    <OutDir>Release</OutDir>
+    <IntDir>.\Release</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../gdbm</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../gdbm</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

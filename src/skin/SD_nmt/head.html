@@ -1,0 +1,166 @@
+<html>
+<head>
+<title><!--LLINK_SERVER_NAME--></title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+	.menu {
+		font-size:14px;
+		color:white;
+		font-weight:bold;
+	}
+	.menu a td {
+		font-size:14px;
+		color:white;
+		font-weight:bold;
+		width: 100px;
+	}
+	.server {
+		font-size:14px;
+		color:white;
+		font-weight:bold;
+	}
+
+	/* 
+	 * classes for line_*.html.
+	 * width of background image: 430px.
+	 * width (tvid + icon + (dir|{file,fsize}) + filler < 430 !
+ 	 *
+	*/ 
+	.line {
+		font-size: 14px;
+		color: white;
+		font-weight: bold;
+	}
+	.line table {
+		width: 430px;
+		font-size: 14px;
+		color: white;
+		font-weight: bold;
+	}
+	.line_tvid {
+		width: 40px;
+		height: 35px;
+	}
+	.line_icon {
+		width: 40px;
+	}
+	.line_iconsz {
+		width: 35px;
+		height: 25px;
+	}
+	/* 
+	 * choose line_dir and line_file widths so that the total
+	 * stays about 10px below the width of the table
+	 *
+	 */ 
+	.line_dir {
+		white-space: nowrap;
+		overflow: hidden;
+		width: 330px;
+	}
+	.line_file {
+		width: 270px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.line_fsize {
+		font-size:12px;
+		color:white;
+		width: 65px;
+	}
+	.line_filler {
+		width: 15px;
+	}
+</style>
+</head>
+
+<body background="/nmt-img/bg.jpg" marginheight=40 bgcolor="#398EC4"
+	link="#eeeeee" alink="#eeeeee" vlink="#eeeeee"
+	focuscolor="#5090f0" focustext="#ffffff"
+	onloadset="L<!--LLINK_PAGE_FOCUS-->">
+<table border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width="129" valign="top">
+	<table border=0 cellspacing=0 cellpadding=0>
+	<tr>
+	<td height="144" valign="top" align="right"></td></tr>
+	<tr>
+	<td align="right" valign="bottom">
+		<img src="/nmt-img/side_server.png" width="90" height="69"></td>
+	</tr>
+	<tr>
+	<td align="right" height="20" valign="top" class="server">
+		//<!--LLINK_SERVER_NAME--></td></tr>
+	<tr>
+	<td align="right"><img src="/nmt-img/line_side.png" width=86 height=29></td>
+	</tr>
+	<tr>
+	<td height="10"></td></tr>
+	<tr>
+	<td align="right">
+		<table border=0 cellspacing=0 cellpadding=0 class="menu">
+
+		<tr>
+		<td valign="middle" align="right">
+		<a href="<!--LLINK_PARENT_DIRECTORY_URL-->"
+			tvid="red">Up</a>
+		</td>
+		<td width = "10">&nbsp;</td>
+		<td width = "10" bgcolor = "red">&nbsp;</td>
+		</tr>
+		<tr><td height="10"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right">
+		<a href="<!--LLINK_CURRENT_DIRECTORY_URL-->"
+			tvid="green">Reload</a>
+		</td>
+		<td width = "10">&nbsp;</td>
+		<td width = "10" bgcolor = "green">&nbsp;</td>
+		</tr>
+		<tr><td height="10"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right">
+		<!--LLINK_IF_CLIENT_IS_SYABAS-->
+		<a href="<!--LLINK_FULL_URL--><!--LLINK_CURRENT_PLAYALL-->&type=music"
+			pod="2,0,"
+			tvid="yellow">Play music</a>
+		<!--LLINK_IF_CLIENT_ELSE-->
+		<a href="javascript: myprev()">Prev page</A>
+		<!--/LLINK_IF_CLIENT_IS_SYABAS-->
+		</td>
+		<td width = "10">&nbsp;</td>
+		<td width = "10" bgcolor = "yellow">&nbsp;</td>
+		</tr>
+		<tr><td height="10"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right">
+		<!--LLINK_IF_CLIENT_IS_SYABAS-->
+		<a href="MUTE"
+			pod="1,0,<!--LLINK_FULL_URL--><!--LLINK_CURRENT_VIEWALL-->&type=photo"
+			tvid = "blue">View pics</a>
+		<!--LLINK_IF_CLIENT_ELSE-->
+		<a href="javascript: mynext()">Next page</A>
+		<!--/LLINK_IF_CLIENT_IS_SYABAS-->
+		</td>
+		<td width = "10">&nbsp;</td>
+		<td width = "10" bgcolor = "blue">&nbsp;</td>
+		</tr>
+		<tr><td height="10"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right">
+			&nbsp;
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+<td height="405" width="30" background="/nmt-img/divider.png"></td>
+<td width="430" valign="top">
+	<table border="0" cellspacing="0" cellpadding="0" class="line">
+
