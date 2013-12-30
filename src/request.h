@@ -200,6 +200,7 @@ struct request_struct {
 
     void *llrar_cacher; // Only used during RAR listings.
     int llrar_cache_fill; // Just fill the cache, no processing.
+  int dlna_streaming;
 };
 
 typedef struct request_struct request_t;

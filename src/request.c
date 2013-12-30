@@ -850,6 +850,7 @@ int request_handler(lion_t *handle, void *user_data,
 				if (strstr(ar, "Syabas"))
 					node->client_is_syabas = 1;
 
+
                 // Set the skin we are supposed to use with this request.
                 skin_set_skin(node, ar);
 
@@ -882,6 +883,12 @@ int request_handler(lion_t *handle, void *user_data,
 			} else if (!mystrccmp("Accept:", token)) {
 
 				// "Accept: */*"
+				break;
+
+			} else if (!mystrccmp("transferMode.dlna.org:",token)) {
+
+			  // Streaming
+			  node->dlna_streaming=1;
 				break;
 
 
@@ -1856,6 +1863,22 @@ void request_reply(request_t *node, int code, char *reason)
 	  // HEAD is keep-alive here, they seem to close?
 
 	} // code 200s
+
+
+	if (node->dlna_streaming) {
+	  if (lion_printf(node->handle, "TransferMode.DLNA.ORG: Streaming\r\n") <= 0)
+	    
+	    return;
+	  if (lion_printf(node->handle, "contentFeatures.dlna.org: DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01500000000000000000000000000000\r\n") <= 0)
+	    
+	    return;
+	  if (lion_printf(node->handle, "realTimeInfo.dlna.org: DLNA.ORG_TLAG=*\r\n") <= 0)
+	    
+	    return;
+
+	  debugf("TransferMode.DLNA.ORG: Streaming\n");
+	  node->dlna_streaming =0;
+	}
 
 
 	if (!request_sendsize(node)) return;
