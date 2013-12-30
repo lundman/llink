@@ -11,7 +11,7 @@ llink_SOURCES=conf.c conf.h debug.c debug.h external.c external.h file.c \
    cupnp.c cupnp.h cdms_filesys.c cdms_filesys.h cdms_filesys_http.c
 
 llink_CPPFLAGS = -I$(top_srcdir)/lion/src -I$(top_srcdir)/lion/contrib/libdirlist -I$(top_srcdir)/gdbm-1.8.3
-llink_LDADD=$(top_builddir)/lion/src/liblion.a $(top_builddir)/lion/contrib/libdirlist/libdirlist.a
+llink_LDADD=-llion -ldirlist
 
 llinkdir=$(prefix)/etc
 

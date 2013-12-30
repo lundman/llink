@@ -25,7 +25,7 @@ AC_CONFIG_SUBDIRS([unrar-3.7.8-seek])
 # Run ./configure in gdbm
 AC_CONFIG_SUBDIRS([gdbm-1.8.3])
 
-AC_CHECK_FILE([lion.h], ,
+AC_CHECK_HEADERS([lion.h], ,
    AC_MSG_ERROR([lion.h not found. Please install liblion]))
 
 CFLAGS="$CFLAGS -I../lion/src/ -I../lion/contrib/libdirlist/"
