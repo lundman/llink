@@ -1,5 +1,5 @@
 #SUBDIRS=lion src win32 unrar-3.7.8-seek libdvdread-0.9.7_lund
-SUBDIRS=lion gdbm-1.8.3 src win32 unrar-3.7.8-seek undvd
+SUBDIRS=gdbm-1.8.3 src win32 unrar-3.7.8-seek undvd
 
 EXTRA_DIST=LICENSE LICENSE.unrar LICENSE.libdvdread Example-playlist.txt README.txt README_Win32.txt README.upnp llink-120x120.jpg llink-120x120.png llink-48x48.jpg llink-48x48.png
 

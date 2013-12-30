@@ -17,7 +17,7 @@ AC_PROG_CC
 AC_CHECK_PROG(BUILD, build, build)
 
 # Run ./configure in lion
-AC_CONFIG_SUBDIRS([lion])
+#AC_CONFIG_SUBDIRS([lion])
 
 # Run ./configure in unrar
 AC_CONFIG_SUBDIRS([unrar-3.7.8-seek])
@@ -25,8 +25,8 @@ AC_CONFIG_SUBDIRS([unrar-3.7.8-seek])
 # Run ./configure in gdbm
 AC_CONFIG_SUBDIRS([gdbm-1.8.3])
 
-#AC_CHECK_FILE([lion/src/lion.h], ,
-#   AC_MSG_ERROR([lion.h not found in lion/src/ directory]))
+AC_CHECK_FILE([lion.h], ,
+   AC_MSG_ERROR([lion.h not found. Please install liblion]))
 
 CFLAGS="$CFLAGS -I../lion/src/ -I../lion/contrib/libdirlist/"
 CFLAGS="$CFLAGS -I../gdbm-1.8.3/"
