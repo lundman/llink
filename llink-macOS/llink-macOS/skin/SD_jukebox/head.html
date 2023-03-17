@@ -1,0 +1,166 @@
+﻿
+<html>	
+	<script type="text/javascript">
+		function hide(x){
+		document.styleSheets[0].cssRules[(x-1)*6].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="hidden";
+
+		
+		};
+		
+		function show(x){
+		document.styleSheets[0].cssRules[(x-1)*6].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="visible";
+
+		
+		
+		}
+	</script>
+	<style>
+		#bigframe1{visibility:hidden; top:7; left:5; position:absolute}
+		#bigthumb1{visibility:hidden; top:194; left:32; position:absolute}
+		#title1{visibility:hidden; top:1; left:150; position:absolute}
+		#genre1{visibility:hidden; top:22; left:150; position:absolute}
+		#drt1{visibility:hidden; top:43; left:150; position:absolute}
+		#paging1{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe2{visibility:hidden; top:7; left:135; position:absolute}
+		#bigthumb2{visibility:hidden; top:94; left:162; position:absolute}
+		#title2{visibility:hidden; top:1; left:150; position:absolute}
+		#genre2{visibility:hidden; top:22; left:150; position:absolute}
+		#drt2{visibility:hidden; top:43; left:150; position:absolute}
+		#paging2{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe3{visibility:hidden; top:7; left:270; position:absolute}
+		#bigthumb3{visibility:hidden; top:194; left:297; position:absolute}
+		#title3{visibility:hidden; top:1; left:150; position:absolute}
+		#genre3{visibility:hidden; top:22; left:150; position:absolute}
+		#drt3{visibility:hidden; top:43; left:150; position:absolute}
+		#paging3{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe4{visibility:hidden; top:7; left:405; position:absolute}
+		#bigthumb4{visibility:hidden; top:94; left:432; position:absolute}
+		#title4{visibility:hidden; top:1; left:150; position:absolute}
+		#genre4{visibility:hidden; top:22; left:150; position:absolute}
+		#drt4{visibility:hidden; top:43; left:150; position:absolute}
+		#paging4{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe5{visibility:hidden; top:37; left:5; position:absolute}
+		#bigthumb5{visibility:hidden; top:200; left:32; position:absolute}
+		#title5{visibility:hidden; top:1; left:150; position:absolute}
+		#genre5{visibility:hidden; top:22; left:150; position:absolute}
+		#drt5{visibility:hidden; top:43; left:150; position:absolute}
+		#paging5{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe6{visibility:hidden; top:37; left:135; position:absolute}
+		#bigthumb6{visibility:hidden; top:200; left:162; position:absolute}
+		#title6{visibility:hidden; top:1; left:150; position:absolute}
+		#genre6{visibility:hidden; top:22; left:150; position:absolute}
+		#drt6{visibility:hidden; top:43; left:150; position:absolute}
+		#paging6{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe7{visibility:hidden; top:37; left:270; position:absolute}
+		#bigthumb7{visibility:hidden; top:200; left:297; position:absolute}
+		#title7{visibility:hidden; top:1; left:150; position:absolute}
+		#genre7{visibility:hidden; top:22; left:150; position:absolute}
+		#drt7{visibility:hidden; top:43; left:150; position:absolute}
+		#paging7{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe8{visibility:hidden; top:37; left:405; position:absolute}
+		#bigthumb8{visibility:hidden; top:200; left:432; position:absolute}
+		#title8{visibility:hidden; top1; left:150; position:absolute}
+		#genre8{visibility:hidden; top:22; left:150; position:absolute}
+		#drt8{visibility:hidden; top:43; left:150; position:absolute}
+		#paging8{visibility:hidden; top:340; left:540; position:absolute}
+
+	</style>
+
+	<style>
+		#frame1{visibility:visible; top:109; left:47; position:absolute}
+		#frame2{visibility:visible; top:109; left:180; position:absolute}
+		#frame3{visibility:visible; top:109; left:312; position:absolute}
+		#frame4{visibility:visible; top:109; left:445; position:absolute}
+		#frame5{visibility:visible; top:208; left:47; position:absolute}
+		#frame6{visibility:visible; top:208; left:180; position:absolute}
+		#frame7{visibility:visible; top:208; left:312; position:absolute}
+		#frame8{visibility:visible; top:208; left:445; position:absolute}
+		#reflection{visibility:visible; top:109; left:47; position:absolute}
+	</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+  <meta http-equiv="Pragma" content="no-cache">
+  
+<style>
+         
+.paging{ 
+  	font-size:17px; 
+  	color: #787878;
+  	
+}
+
+.title{ 
+  	font-size:17px; 
+  	color: #E4F803;
+  	font-weight:bold;
+}
+
+.titleh{ 
+  	font-size:23px; 
+  	color: #C1F705;
+  	font-weight:bold;
+}
+
+.txt{ 
+  	font-size:13px; 
+  	color: #8E9194;
+}
+
+.date{ 
+  	font-size:13px; 
+  	color: #DDDFE0;
+}
+        
+.duration{ 
+  	font-size:13px; 
+  	color: #ECEBEB;
+  	font-weight:bold;
+}         
+
+</style> 
+
+</head>
+
+
+<body marginwidth=0 marginheight=0 border=0 background="/image-sd/bg.jpg" onloadset="6" focuscolor="#06B9FA">
+	<table width="624" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="109" colspan="3" align="right" valign="top">
+
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr><td height="35"></td></tr>
+					<tr>
+						<td align="right" colspan="2"><img src="/image-sd/logo.png"></td>
+						<td width="40"></td>
+					</tr>
+					
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- Edit for prev indicator -->
+			<td width="50"><img src="/image-sd/prev.png"  width="8" height="11"></td>
+			<!-- End Edit for prev indicator -->
+			<td width="524" height="200" valign="top" align="left">
+				<!-- Edit the thumb & movie link -->
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>

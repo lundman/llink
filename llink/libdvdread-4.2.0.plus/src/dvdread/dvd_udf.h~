@@ -1,0 +1,205 @@
+/*
+ * This code is based on dvdudf by:
+ *   Christian Wolff <scarabaeus@convergence.de>.
+ *
+ * Modifications by:
+ *   Billy Biggs <vektor@dumbterm.net>.
+ *   Björn Englund <d4bjorn@dtek.chalmers.se>.
+ *
+ * dvdudf: parse and read the UDF volume information of a DVD Video
+ * Copyright (C) 1999 Christian Wolff for convergence integrated media
+ * GmbH The author can be reached at scarabaeus@convergence.de, the
+ * project's page is at http://linuxtv.org/dvd/
+ *
+ * This file is part of libdvdread.
+ *
+ * libdvdread is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * libdvdread is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with libdvdread; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#ifndef LIBDVDREAD_DVD_UDF_H
+#define LIBDVDREAD_DVD_UDF_H
+
+#include <inttypes.h>
+
+#include "dvdread/dvd_reader.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/*
+ *
+ * UDF defines struct AD, which dvdread unfortunately overloads to refer to
+ * a file, creating problems with chained ADs. We need to define a generic
+ * UDF_FILE structure to hold the information required.
+ * It could be worth a separate struct for Directories, since they are (probably)
+ * only ever in 1 chain.
+ *
+ * Is there a real max number of chains? What can fit in 2048?
+ * My 4.4GB file example uses 5 chains. A BD ISO can store 50GB of data, so
+ * potentially we could have a 50GB file, so we would need to be able to
+ * support 62 chains.
+ *
+ */
+
+#ifndef UDF_MAX_AD_CHAINS     // Allow MAX to be increased by API.
+#define UDF_MAX_AD_CHAINS 50
+#endif
+
+
+typedef struct UDF_FILE udf_file_t;
+
+
+#ifndef NULL
+#define NULL ((void *)0)
+#endif
+
+
+
+struct Partition {
+    int valid;
+    char VolumeDesc[128];
+    uint16_t Flags;
+    uint16_t Number;
+    char Contents[32];
+    uint32_t AccessType;
+    uint32_t Start;
+    uint32_t Length;
+
+    uint32_t fsd_location;
+
+    uint32_t Metadata_Main;  // TagId 266 FileType 250
+    uint32_t Metadata_Mirror;// TagId 266 FileType 251
+    uint32_t Metadata_Bitmap;// TagId 266 FileType 252
+
+};
+
+struct AD {
+    uint32_t Location;
+    uint32_t Length;
+    uint8_t  Flags;
+    uint16_t Partition;
+};
+
+struct UDF_FILE {
+    uint64_t Length;
+    uint32_t num_AD;
+    uint32_t Partition_Start;
+    uint16_t flags; // From ICBTAG
+    uint32_t content_offset; // When flags&7==3
+    struct AD AD_chain[UDF_MAX_AD_CHAINS];
+};
+
+struct space_bitmap {
+    uint32_t NumberOfBits;
+    uint32_t NumberOfBytes;
+};
+
+struct extent_ad {
+    uint32_t location;
+    uint32_t length;
+};
+
+struct avdp_t {
+    struct extent_ad mvds;
+    struct extent_ad rvds;
+};
+
+struct pvd_t {
+    uint8_t VolumeIdentifier[32];
+    uint8_t VolumeSetIdentifier[128];
+};
+
+struct lbudf {
+    uint32_t lb;
+    uint8_t *data;
+    /* needed for proper freeing */
+    uint8_t *data_base;
+};
+
+struct icbmap {
+    uint32_t lbn;
+    udf_file_t file;
+    uint8_t filetype;
+};
+
+struct udf_cache {
+    int avdp_valid;
+    struct avdp_t avdp;
+    int pvd_valid;
+    struct pvd_t pvd;
+    int partition_valid;
+    struct Partition partition;
+    int rooticb_valid;
+    struct AD rooticb;
+    int lb_num;
+    struct lbudf *lbs;
+    int map_num;
+    struct icbmap *maps;
+};
+
+struct MetadataPartition {
+    uint8_t PartMapType;
+    uint8_t PartMapLen;
+    // Identifier Flags (1) + String (23) + Suffix (8)
+    uint8_t IdentifierStr[23];
+
+    // Sparable Table
+    uint16_t VolSeq;
+    uint16_t PartNum;
+    uint16_t PacketLen;
+    uint8_t  N_ST;
+    uint32_t EachSize;
+
+    // Metadata
+    uint32_t MainFileLocation;
+    uint32_t MirrorFileLocation;
+    uint32_t BitmapFileLocation;
+    uint32_t AllocationUnitSize;
+    uint16_t AlignmentUnitSize;
+    uint8_t  Flags;
+
+};
+
+typedef enum {
+    PartitionCache, RootICBCache, LBUDFCache, MapCache, AVDPCache, PVDCache
+} UDFCacheType;
+
+
+
+
+/**
+ * Looks for a file on the UDF disc/imagefile and returns the block number
+ * where it begins, or 0 if it is not found.  The filename should be an
+ * absolute pathname on the UDF filesystem, starting with '/'.  For example,
+ * '/VIDEO_TS/VTS_01_1.IFO'.  On success, filesize will be set to the size of
+ * the file in bytes.
+ */
+udf_file_t *UDFFindFile( dvd_reader_t *device, char *filename, uint64_t *size );
+void        UDFFreeFile( dvd_reader_t *device, udf_file_t *udf_file );
+uint32_t    UDFFileBlockPos( udf_file_t *udf_file, uint32_t file_block);
+int         UDFScanDirX( dvd_reader_t *device, dvd_dir_t *dirp );
+void FreeUDFCache(void *cache);
+int UDFGetVolumeIdentifier(dvd_reader_t *device,
+                           char *volid, unsigned int volid_size);
+int UDFGetVolumeSetIdentifier(dvd_reader_t *device,
+                              uint8_t *volsetid, unsigned int volsetid_size);
+void *GetUDFCacheHandle(dvd_reader_t *device);
+void SetUDFCacheHandle(dvd_reader_t *device, void *cache);
+
+#ifdef __cplusplus
+};
+#endif
+#endif /* LIBDVDREAD_DVD_UDF_H */

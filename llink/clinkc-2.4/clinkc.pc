@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: clinkc
+Description: CyberLink for C UPnP library
+Version: 2.4
+Requires:
+Libs: -L${exec_prefix}/lib -lclinkc
+Cflags: -I${includedir}

@@ -1,0 +1,13 @@
+
+Fix includes for FIONREAD
+Change strcasecmp to cg_strcasecmp to help witn WIN32 compile
+Fix missing uuid_unparse_lower on Solaris (uuid exists, but no _lower method)
+
+- lundman
+
+--This line, and those below, will be ignored--
+
+M    sample/common/kb_util.c
+M    src/cybergarage/http/chttp_server.c
+M    src/cybergarage/upnp/cstatevariable.c
+M    src/cybergarage/upnp/cupnp_function.c

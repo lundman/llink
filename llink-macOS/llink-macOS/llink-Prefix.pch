@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'llink-macOS' target in the 'llink-macOS' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

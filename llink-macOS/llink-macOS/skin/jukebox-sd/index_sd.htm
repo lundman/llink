@@ -1,0 +1,264 @@
+﻿
+<html>	
+	 <script type="text/javascript">
+		function hide(x){
+		document.styleSheets[0].cssRules[(x-1)*6].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="hidden";
+		
+		};
+		
+		function show(x){
+		document.styleSheets[0].cssRules[(x-1)*6].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="visible";
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="visible";
+	
+		}
+	</script>
+	
+	<style>
+		#bigframe1{visibility:hidden; top:7; left:5; position:absolute}
+		#bigthumb1{visibility:hidden; top:94; left:32; position:absolute}
+		#title1{visibility:hidden; top:1; left:150; position:absolute}
+		#genre1{visibility:hidden; top:22; left:150; position:absolute}
+		#drt1{visibility:hidden; top:43; left:150; position:absolute}
+		#paging1{visibility:hidden; top:320; left:530; position:absolute}
+		
+		
+		#bigframe2{visibility:hidden; top:7; left:135; position:absolute}
+		#bigthumb2{visibility:hidden; top:94; left:162; position:absolute}
+		#title2{visibility:hidden; top:1; left:150; position:absolute}
+		#genre2{visibility:hidden; top:22; left:150; position:absolute}
+		#drt2{visibility:hidden; top:43; left:150; position:absolute}
+		#paging2{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe3{visibility:hidden; top:7; left:270; position:absolute}
+		#bigthumb3{visibility:hidden; top:94; left:297; position:absolute}
+		#title3{visibility:hidden; top:1; left:150; position:absolute}
+		#genre3{visibility:hidden; top:22; left:150; position:absolute}
+		#drt3{visibility:hidden; top:43; left:150; position:absolute}
+		#paging3{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe4{visibility:hidden; top:7; left:405; position:absolute}
+		#bigthumb4{visibility:hidden; top:94; left:432; position:absolute}
+		#title4{visibility:hidden; top:1; left:150; position:absolute}
+		#genre4{visibility:hidden; top:22; left:150; position:absolute}
+		#drt4{visibility:hidden; top:43; left:150; position:absolute}
+		#paging4{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe5{visibility:hidden; top:37; left:5; position:absolute}
+		#bigthumb5{visibility:hidden; top:200; left:32; position:absolute}
+		#title5{visibility:hidden; top:1; left:150; position:absolute}
+		#genre5{visibility:hidden; top:22; left:150; position:absolute}
+		#drt5{visibility:hidden; top:43; left:150; position:absolute}
+		#paging5{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe6{visibility:hidden; top:37; left:135; position:absolute}
+		#bigthumb6{visibility:hidden; top:200; left:162; position:absolute}
+		#title6{visibility:hidden; top:1; left:150; position:absolute}
+		#genre6{visibility:hidden; top:22; left:150; position:absolute}
+		#drt6{visibility:hidden; top:43; left:150; position:absolute}
+		#paging6{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe7{visibility:hidden; top:37; left:270; position:absolute}
+		#bigthumb7{visibility:hidden; top:200; left:297; position:absolute}
+		#title7{visibility:hidden; top:1; left:150; position:absolute}
+		#genre7{visibility:hidden; top:22; left:150; position:absolute}
+		#drt7{visibility:hidden; top:43; left:150; position:absolute}
+		#paging7{visibility:hidden; top:320; left:530; position:absolute}
+		
+		#bigframe8{visibility:hidden; top:37; left:405; position:absolute}
+		#bigthumb8{visibility:hidden; top:200; left:432; position:absolute}
+		#title8{visibility:hidden; top:1; left:150; position:absolute}
+		#genre8{visibility:hidden; top:22; left:150; position:absolute}
+		#drt8{visibility:hidden; top:43; left:150; position:absolute}
+		#paging8{visibility:hidden; top:340; left:540; position:absolute}
+		
+
+	</style>
+
+	<style>
+		#frame1{visibility:visible; top:109; left:47; position:absolute}
+		#frame2{visibility:visible; top:109; left:180; position:absolute}
+		#frame3{visibility:visible; top:109; left:312; position:absolute}
+		#frame4{visibility:visible; top:109; left:445; position:absolute}
+		#frame5{visibility:visible; top:208; left:47; position:absolute}
+		#frame6{visibility:visible; top:208; left:180; position:absolute}
+		#frame7{visibility:visible; top:208; left:312; position:absolute}
+		#frame8{visibility:visible; top:208; left:445; position:absolute}
+		#reflection{visibility:visible; top:109; left:47; position:absolute}
+	</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+  <meta http-equiv="Pragma" content="no-cache"> 
+<style>
+.paging{ 
+  	font-size:17px; 
+  	color: #787878;
+}
+
+.title{ 
+  	font-size:17px; 
+  	color: #E4F803;
+  	font-weight:bold;
+}
+
+.titleh{ 
+  	font-size:23px; 
+  	color: #C1F705;
+  	font-weight:bold;
+}
+
+.txt{ 
+  	font-size:14px; 
+  	color: #8E9194;
+}
+
+.date{ 
+  	font-size:13px; 
+  	color: #DDDFE0;
+}
+        
+.duration{ 
+  	font-size:13px; 
+  	color: #ECEBEB;
+  	font-weight:bold;
+}         
+</style>   
+</head>
+<body marginwidth=0 marginheight=0 border=0 background="image-sd/bg.jpg" onloadset="6" focuscolor="#06B9FA"> 
+	<table width="624" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="109" colspan="3" align="right" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr><td height="35"></td></tr>
+					<tr>
+						<td align="right" colspan="2"><img src="image-sd/logo.png"></a></td>
+						<td width="40"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<!-- Edit for prev indicator -->
+			<td width="50"><img src="image-sd/prev.png"  width="8" height="11"></td>
+			<!-- End Edit for prev indicator -->
+			<td width="524" height="200" valign="top" align="left">
+				<!--Edit the thumb & movie link -->
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="35"><a href="movie/Shooter/shooter.avi" tvid="1" onkeyleftset="1" name="1" ><img src="movie/Shooter/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(1)" border="0" onblur="hide(1)"></a></td>
+						<td height="35"><a href="movie/Spiderman/spiderman.avi" tvid="2" name="2"><img src="movie/Spiderman/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(2)" border="0" onblur="hide(2)"></a></td>
+						<td height="35"><a href="movie/Starwars/starwars.avi" tvid="3" name="3"><img src="movie/Starwars/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(3)" border="0" onblur="hide(3)"></a></td>
+						<td height="35"><a href="movie/Narvia/narvia.avi" tvid="4" onkeyrightset="next" name="4"><img src="movie/Narvia/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(4)" border="0" onblur="hide(4)"></a></td>
+					</tr>
+					<tr>
+						<td height="35"><a href="movie/Hitman/hitman.avi" tvid="5" onkeyleftset="5" name="5"> <img src="movie/Superman/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(5)" border="0" onblur="hide(5)"></a></td>
+						<td height="35"><a href="movie/Beowulf/beowulf.avi" tvid="6" name="6"><img src="movie/Hitman/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(6)" border="0" onblur="hide(6)"></a></td>
+						<td height="35"><a href="movie/Blooddiamond/blooddiamond.avi" tvid="7" name="7"><img src="movie/Beowulf/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(7)" border="0" onblur="hide(7)"></a></td>
+						<td height="35"><a href="movie/300/300.avi" tvid="8" onkeyrightset="next" name="last"> <img src="movie/Blooddiamond/thumb/thumb_small.jpg" width="131" height="98" onfocussrc="image-sd/tran.png" onfocus="show(8)" border="0" onblur="hide(8)"></a></td>
+					</tr>				
+				</table>
+				<!-- End Edit the thumb & movie link -->
+			</td>
+			<!-- Edit for next indicator -->
+			<td width="50" align="right"><img src="image-sd/next_on.png"  width="8" height="11"></td>
+			<!-- End Edit for next indicator -->
+		</tr>
+	</table>
+<!-- Edit the link for next page--->
+<a href="next_sd.htm" tvid="pgdn" name=next onfocusload></a>
+<!-- End Edit the link for next page--->
+</body>
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame1">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame2">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame3">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame4">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame5">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame6">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame7">
+    <img src="image-sd/frame.png"  width="133" height="99" id="frame8">
+    <img src="image-sd/reflection.png"  width="534" height="125" id="reflection">
+
+	 <!-- Edit for item1 info & bigthumb--->
+   		<img src="movie/Shooter/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb1">
+    	<img src="image-sd/bigframe_up.png"  id="bigframe1">
+    	<div id="title1" class="title">Shooter(射击者)</div>
+    	<div id="genre1" class="txt">action</div>
+		<div id="drt1" class="date">2 hours 30 mins</div>
+		<div id="paging1" class="paging">1 /  17</div>
+	 <!-- End Edit for item1 info & bigthumb--->
+	 
+	 <!-- Edit for item2 info & bigthumb--->
+	    <img src="movie/Spiderman/thumb/thumb_big.jpg" width="163" height="120" id="bigthumb2">
+      	<img src="image-sd/bigframe_up.png"  id="bigframe2">
+      	<div id="title2" class="title">Spiderman</div>
+      	<div id="genre2" class="txt">action</div>
+      	<div id="drt2" class="date">2 hours 30 mins</div>	
+		<div id="paging2" class="paging">2 /  17</div>
+	 <!-- End Edit for item2 info & bigthumb --->
+
+	 <!-- Edit for item3 info & bigthumb--->
+   		<img src="movie/Starwars/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb3">
+    	<img src="image-sd/bigframe_up.png"  id="bigframe3">
+		<div id="title3" class="title">Star Wars Episode II : Attack Of The Clones</div>
+		<div id="genre3" class="txt">action</div>
+		<div id="drt3" class="date">3 hours 30 mins</div>
+		<div id="paging3" class="paging">3 /  17</div>
+	<!-- End Edit for item3 info & bigthumb--->
+
+	
+	<!-- Edit for item4 info & bigthumb--->
+		<img src="movie/Narvia/thumb/thumb_big.jpg" width="163" height="120" id="bigthumb4">
+  		<img src="image-sd/bigframe_up.png"  id="bigframe4">
+		<div id="title4" class="title">Narvia - Prince Caspian</div>
+		<div id="genre4" class="txt">action</div>
+		<div id="drt4" class="date">2 hours 30 mins</div>
+		<div id="paging4" class="paging">4 /  17</div>
+	<!-- End Edit for item5 info & bigthumb--->	
+	
+	<!-- Edit for item5 info & bigthumb--->
+		<img src="movie/Superman/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb5">
+  		<img src="image-sd/bigframe_down.png"  id="bigframe5">
+		<div id="title5" class="title">Superman Return</div>
+		<div id="genre5" class="txt">action</div>
+		<div id="drt5" class="date">2 hours</div>
+		<div id="paging5" class="paging">5 /  17</div>
+	<!-- End Edit for item5 info & bigthumb--->
+		
+	<!-- Edit for item6 info & bigthumb--->
+	    <img src="movie/Hitman/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb6">
+  		<img src="image-sd/bigframe_down.png"  id="bigframe6">
+		<div id="title6" class="title">Hitman</div>
+		<div id="genre6" class="txt">acture</div>
+		<div id="drt6" class="date">3 hours 30 mins</div>
+		<div id="paging6" class="paging">6 /  17</div>
+	<!-- End Edit for item6 info & bigthumb--->
+	
+	
+	<!-- Edit for item7 info & bigthumb--->		
+		<img src="movie/Beowulf/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb7">
+  		<img src="image-sd/bigframe_down.png"  id="bigframe7">
+		<div id="title7" class="title">Beowulf</div>
+		<div id="genre7" class="txt">action</div>
+		<div id="drt7" class="date">1 hour 30 mins</div>
+		<div id="paging7" class="paging">7 /  17</div>
+	<!-- End Edit for item7 info & bigthumb--->		
+	
+	<!-- Edit for item8 info & bigthumb--->
+	    <img src="movie/Blooddiamond/thumb/thumb_big.jpg"  width="163" height="120" id="bigthumb8">
+  		<img src="image-sd/bigframe_down.png"  id="bigframe8">
+		<div id="title8" class="title">Blood Diamond</div>
+		<div id="genre8" class="txt">advanture</div>
+		<div id="drt8" class="date">2 hours 30 mins</div>
+		<div id="paging8" class="paging">8 /  17</div>
+	<!-- End Edit for item8 info & bigthumb--->
+
+</html>

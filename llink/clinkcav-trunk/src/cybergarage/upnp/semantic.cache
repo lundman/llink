@@ -1,0 +1,16 @@
+;; Object upnp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "upnp/"
+  :tables (list
+   (semanticdb-table "cupnp_function.c"
+    :major-mode 'c-mode
+    :tags '(("cybergarage/typedef.h" include (:system-flag t) nil [666 698]) ("uuid/uuid.h" include (:system-flag t) nil [784 806]) ("cybergarage/upnp/cupnp.h" include (:system-flag t) nil [815 850]) ("cybergarage/util/clog.h" include (:system-flag t) nil [851 885]) ("time.h" include (:system-flag t) nil [887 904]) ("stdlib.h" include (:system-flag t) nil [905 924]) ("uuid_unparse_lower" function (:arguments (("uu" variable (:type ("uuid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1236 1246]) ("out" variable (:pointer 1 :type "char") (reparse-symbol arg-sub-list) [1247 1257])) :type "void") nil [1211 1507]) ("isUpnpNMPRMode" variable (:typemodifiers ("static") :default-value "FALSE;" :type ("BOOL" type (:type "class") nil nil)) nil [1617 1652]) ("cg_upnp_createuuid" function (:pointer 1 :arguments (("uuidBuf" variable (:pointer 1 :type "char") (reparse-symbol arg-sub-list) [1785 1799]) ("uuidBufSize" variable (:type "int") (reparse-symbol arg-sub-list) [1800 1816])) :type "char") nil [1760 2892]) ("cg_upnp_getservername" function (:pointer 1 :arguments (("buf" variable (:pointer 1 :type "char") (reparse-symbol arg-sub-list) [3031 3041]) ("bufSize" variable (:type "int") (reparse-symbol arg-sub-list) [3042 3054])) :type "char") nil [3003 3545]) ("cg_upnp_setnmprmode" function (:arguments (("onFlag" variable (:type ("BOOL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3679 3691])) :type "void") nil [3654 3792]) ("cg_upnp_isnmprmode" function (:type ("BOOL" type (:type "class") nil nil)) nil [3900 4024]))
+    :file "cupnp_function.c"
+    :pointmax 4026
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

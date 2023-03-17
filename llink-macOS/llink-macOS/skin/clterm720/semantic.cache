@@ -1,0 +1,16 @@
+;; Object clterm720/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "clterm720/"
+  :tables (list 
+   (semanticdb-table "Makefile.am"
+    :major-mode 'makefile-automake-mode
+    :tags '(("EXTRA_DIST" variable (:default-value ("head.html" "line_dir.html" "line_last.html" "line_movie.html" "line_music.html" "line_photo.html" "line_playlist.html" "menu.html" "menu_dir.html" "menu_movie.html" "menu_music.html" "menu_photo.html" "menu_playlist.html" "menu_test.html" "tail.html")) nil [1 234]) ("SUBDIRS" variable (:default-value ("clt720img")) nil [234 252]))
+    :file "Makefile.am"
+    :pointmax 252
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

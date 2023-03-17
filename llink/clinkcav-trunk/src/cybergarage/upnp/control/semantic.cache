@@ -1,0 +1,16 @@
+;; Object control/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "control/"
+  :tables (list
+   (semanticdb-table "caction_ctrl.c"
+    :major-mode 'c-mode
+    :tags '(("cybergarage/upnp/control/ccontrol.h" include (:system-flag t) nil [541 587]) ("cybergarage/util/clog.h" include (:system-flag t) nil [588 622]) ("cg_upnp_action_clearoutputargumentvalues" function (:arguments (("action" variable (:pointer 1 :type ("CgUpnpAction" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [958 979])) :type "void") nil [912 1348]) ("cg_upnp_action_performlistner" function (:arguments (("action" variable (:pointer 1 :type ("CgUpnpAction" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1503 1524]) ("actionReq" variable (:pointer 1 :type ("CgUpnpActionRequest" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1525 1556])) :type ("BOOL" type (:type "class") nil nil)) nil [1468 2799]) ("cg_upnp_action_post" function (:arguments (("action" variable (:pointer 1 :type ("CgUpnpAction" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2933 2954])) :type ("BOOL" type (:type "class") nil nil)) nil [2908 3868]))
+    :file "caction_ctrl.c"
+    :pointmax 3996
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

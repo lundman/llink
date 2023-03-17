@@ -1,0 +1,5 @@
+undvd-debug.o: debug.c ../config.h debug.h
+
+../config.h:
+
+debug.h:

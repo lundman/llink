@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title><!--LLINK_SERVER_NAME--></title>
+</head>
+<script type="text/javascript">
+        var value = <!--LLINK_RAND-->;
+		function changecolor(){
+		if (value<=6){
+			document.styleSheets[1].cssRules[0].style.visibility="visible";
+			document.styleSheets[1].cssRules[2].style.visibility="visible";			
+			document.styleSheets[2].cssRules[2].style.color="#FFFFFF";
+			document.styleSheets[2].cssRules[3].style.color="#FFFFFF";
+				document.styleSheets[3].cssRules[0].style.visibility="visible";
+				document.styleSheets[3].cssRules[2].style.visibility="visible";			
+				document.styleSheets[3].cssRules[4].style.visibility="visible";
+				document.styleSheets[3].cssRules[6].style.visibility="visible";
+				document.styleSheets[3].cssRules[8].style.visibility="visible";
+				document.styleSheets[3].cssRules[10].style.visibility="visible";
+				document.styleSheets[3].cssRules[12].style.visibility="visible";
+				document.styleSheets[3].cssRules[14].style.visibility="visible";
+				document.styleSheets[3].cssRules[16].style.visibility="visible";
+				document.styleSheets[3].cssRules[18].style.visibility="visible";				
+				}
+			else{
+			document.styleSheets[1].cssRules[1].style.visibility="visible";
+			document.styleSheets[1].cssRules[3].style.visibility="visible";
+			document.styleSheets[2].cssRules[2].style.color="#000000";
+			document.styleSheets[2].cssRules[3].style.color="#000000";
+				document.styleSheets[3].cssRules[1].style.visibility="visible";
+				document.styleSheets[3].cssRules[3].style.visibility="visible";
+				document.styleSheets[3].cssRules[5].style.visibility="visible";
+				document.styleSheets[3].cssRules[7].style.visibility="visible";
+				document.styleSheets[3].cssRules[9].style.visibility="visible";
+				document.styleSheets[3].cssRules[11].style.visibility="visible";
+				document.styleSheets[3].cssRules[13].style.visibility="visible";
+				document.styleSheets[3].cssRules[15].style.visibility="visible";
+				document.styleSheets[3].cssRules[17].style.visibility="visible";
+				document.styleSheets[3].cssRules[19].style.visibility="visible";				
+
+			}
+		};
+</script>
+<script type="text/javascript">
+        var value = <!--LLINK_RAND-->;
+		function hide2(x){
+		document.styleSheets[0].cssRules[(x-1)*6].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="hidden";
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="hidden";
+		};
+		
+		function show2(x,plot,rating,tajm,genres){
+		if (value<=6){
+			document.styleSheets[0].cssRules[(x-1)*6].style.visibility="visible";
+			document.styleSheets[1].cssRules[0].style.visibility="visible";
+			}
+			else{
+			document.styleSheets[0].cssRules[(x-1)*6+1].style.visibility="visible";
+			document.styleSheets[1].cssRules[1].style.visibility="visible";
+			}
+		document.styleSheets[0].cssRules[(x-1)*6+2].style.visibility="visible";
+		if (rating!=''){
+			document.styleSheets[0].cssRules[(x-1)*6+3].style.visibility="visible";
+			}
+		else{
+			document.styleSheets[1].cssRules[0].style.visibility="hidden";
+			document.styleSheets[1].cssRules[1].style.visibility="hidden";
+			}	
+		if (tajm!=''){
+			document.styleSheets[0].cssRules[(x-1)*6+4].style.visibility="visible";
+			}	
+		document.styleSheets[0].cssRules[(x-1)*6+5].style.visibility="hidden";
+		document.getElementById('genres').firstChild.nodeValue=genres;
+		document.getElementById('plot').firstChild.nodeValue=plot;
+		};
+	</script>
+	<script type="text/javascript">
+        function loc(x){
+                var pageUrl=x;
+                document.getElementById('istab').attributes[0].nodeValue=pageUrl.toString();
+        }
+</script>
+	<style>
+		#bar_black1{visibility:hidden; top:35; left:2; position:absolute}
+		#bar_white1{visibility:hidden; top:35; left:2; position:absolute}
+		#cover1{visibility:hidden; top:10; left:820; position:absolute;}
+		#rating_value1{visibility:hidden; top:360; left:805; position:absolute;}
+		#length_value1{visibility:hidden; top:360; left:895; position:absolute;}
+		#genre_value1{visibility:hidden; top:375; left:860; position:absolute;}
+		
+		#bar_black2{visibility:hidden; top:94; left:2; position:absolute}
+		#bar_white2{visibility:hidden; top:94; left:2; position:absolute}
+		#cover2{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value2{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value2{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value2{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black3{visibility:hidden; top:153; left:2; position:absolute;}
+		#bar_white3{visibility:hidden; top:153; left:2; position:absolute;}
+		#cover3{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value3{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value3{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value3{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black4{visibility:hidden; top:212; left:2; position:absolute}
+		#bar_white4{visibility:hidden; top:212; left:2; position:absolute}
+		#cover4{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value4{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value4{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value4{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black5{visibility:hidden; top:271; left:2; position:absolute}
+		#bar_white5{visibility:hidden; top:271; left:2; position:absolute}
+		#cover5{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value5{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value5{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value5{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black6{visibility:hidden; top:330; left:2; position:absolute}
+		#bar_white6{visibility:hidden; top:330; left:2; position:absolute}
+		#cover6{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value6{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value6{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value6{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black7{visibility:hidden; top:389; left:2; position:absolute}
+		#bar_white7{visibility:hidden; top:389; left:2; position:absolute}
+		#cover7{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value7{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value7{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value7{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black8{visibility:hidden; top:448; left:2; position:absolute}
+		#bar_white8{visibility:hidden; top:448; left:2; position:absolute}
+		#cover8{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value8{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value8{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value8{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black9{visibility:hidden; top:507; left:2; position:absolute}
+		#bar_white9{visibility:hidden; top:507; left:2; position:absolute}
+		#cover9{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value9{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value9{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value9{visibility:hidden; top:375; left:860; position:absolute}
+		
+		#bar_black10{visibility:hidden; top:566; left:2; position:absolute}
+		#bar_white10{visibility:hidden; top:566; left:2; position:absolute}
+		#cover10{visibility:hidden; top:10; left:820; position:absolute}
+		#rating_value10{visibility:hidden; top:360; left:805; position:absolute}
+		#length_value10{visibility:hidden; top:360; left:895; position:absolute}
+		#genre_value10{visibility:hidden; top:375; left:860; position:absolute}
+	</style>
+	<style>
+		#bg_black{visibility:hidden; top:1; left:790; position:absolute}
+		#bg_white{visibility:hidden; top:1; left:795; position:absolute}
+		#nav_logo_black{visibility:hidden; top:630; left:800; position:absolute}
+		#nav_logo_white{visibility:hidden; top:630; left:800; position:absolute}
+	</style>
+
+	<style>
+		.no{
+			font-family: arial, helvetica;
+			font-size: 18px;
+			font-weight: bold;
+			color: #000000;
+		}
+		
+		.text{
+			font-family: arial, helvetica;
+			font-size: 18px;
+			font-weight: bold;
+			color: #000000;
+		}
+		
+
+		.text_small{
+			font-family: arial, helvetica;
+			font-size: 18px;
+			font-weight: normal;
+			color: #000000;
+		}
+		
+		.text_info{
+			font-family: arial, helvetica;
+			font-size: 18px;
+			font-weight: normal;
+			color: #000000;
+		}
+	</style>
+	<style>
+		#block_bg_black1{visibility:hidden; top:54; left:21; position:absolute}
+		#block_bg_white1{visibility:hidden; top:54; left:21; position:absolute}
+		#block_bg_black2{visibility:hidden; top:113; left:21; position:absolute}
+		#block_bg_white2{visibility:hidden; top:113; left:21; position:absolute}
+		#block_bg_black3{visibility:hidden; top:172; left:21; position:absolute}
+		#block_bg_white3{visibility:hidden; top:172; left:21; position:absolute}
+		#block_bg_black4{visibility:hidden; top:231; left:21; position:absolute}
+		#block_bg_white4{visibility:hidden; top:231; left:21; position:absolute}
+		#block_bg_black5{visibility:hidden; top:290; left:21; position:absolute}
+		#block_bg_white5{visibility:hidden; top:290; left:21; position:absolute}
+		#block_bg_black6{visibility:hidden; top:349; left:21; position:absolute}
+		#block_bg_white6{visibility:hidden; top:349; left:21; position:absolute}
+		#block_bg_black7{visibility:hidden; top:408; left:21; position:absolute}
+		#block_bg_white7{visibility:hidden; top:408; left:21; position:absolute}
+		#block_bg_black8{visibility:hidden; top:467; left:21; position:absolute}
+		#block_bg_white8{visibility:hidden; top:467; left:21; position:absolute}
+		#block_bg_black9{visibility:hidden; top:526; left:21; position:absolute}
+		#block_bg_white9{visibility:hidden; top:526; left:21; position:absolute}
+		#block_bg_black10{visibility:hidden; top:585; left:21; position:absolute}
+		#block_bg_white10{visibility:hidden; top:585; left:21; position:absolute}
+	</style>
+	<style>
+	#pagenumber{visibility:visible; top:650; left:20; position:absolute}
+	#status{visibility:visible; top:650; left:160; position:absolute; font-size: 24pl; color: #AA0000}
+	</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<body bgcolor="#000000" focushighlight="transparent" background="/rand<!--LLINK_RAND-->.jpg" MARGINHEIGHT="0" MARGINWIDTH="0" onload="changecolor()" onloadset="(((<!--LLINK_PAGE_FOCUS-->+9)%10)+1)">
+	<table width="1100" border="0" cellspacing="0" cellpadding="0"> 
+		<tr>
+			<td width="21"></td>
+			<td width="774" height="540" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="753" height="55" ></td>
+					</tr>
+

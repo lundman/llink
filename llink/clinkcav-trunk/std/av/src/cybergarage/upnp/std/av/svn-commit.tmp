@@ -1,0 +1,9 @@
+
+patch: cg_upnpav_content_findbyuserfunc()
+-- Used to only search *directly* attached child-nodes to rootContent, and
+   not childContent of childContent. Changed to recursively find content.
+
+
+--This line, and those below, will be ignored--
+
+M    ccontent.c

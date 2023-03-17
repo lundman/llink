@@ -1,0 +1,389 @@
+#
+# SSDP is the mulsticast discovery protocol used by the
+# Buffalo Networked DVD Player, and hopefully something
+# similar by the others. In theory you should
+# not need to change anything here if you want to use it.
+#
+# Specify UPNP if you also wish llink to respond to UPNP queries.
+# If you wish to run multiple llinks on your network, or change the default
+# uuid for other reasons, use
+# UPNP=e25641a0-8228-11de-afb8-0002a5d5c51b
+#
+# Example line with all options is:
+# SSDP|ON|multicast=239.255.255.250|port=1900|bindif=0|UPNP
+#
+# The reverse IP in bindif bug has been fixed.
+#
+# The default is:
+#SSDP|ON|UPNP
+SSDP|ON
+
+
+#
+# When we receive SSDP broadcast, and there might be a lot
+# on your network, select the "match" filter by which we
+# will recognise our DVD Player. In theory this should work
+# for all MyiBox devices. If your report something different
+# please email me for updates.
+#
+# Example line with all options is:
+# USN|match=*myiBoxUPnP*SyabasSTB*|pattern=192.168.*:*
+#
+# The default is:
+#USN|match=*myiBoxUPnP*SyabasSTB*|pattern=*
+USN|match=*
+
+
+# Advanced:
+# Manually connect and declare ourselves? This should not be needed but
+# for some situations it could be useful.
+# For llink running on nmt, it ignores SSDP from own IP, so we alias a new
+# IP, and force announcement to port 2020.
+#ANNOUNCE|url=http://127.0.0.1:2020/myiBoxUPnP/description.xml|usn=llink_myiBoxUPnP_SyabasSTB_llink|freq=30
+
+
+#
+# The HTTP request port. This is where the DVD player will connect
+# for the directory listings, as well as the files.
+# By default, Buffalo's own software uses port 8000, so I use
+# port 8001 so that both can run at the same time.
+# The "name" field is what is displayed on the DVDPlayer.
+# "pin" is only used for "parental" extra authority. All Directories and
+# files starting with a "." are normally not shown. If a PIN is entered
+# correctly, these are added to the listing. They are actually text strings.
+# "buffersize" lets you modify the size of binary transfers. So far not been
+# required except for when communicating with iPod/iPad.
+#
+# NOTE: user and pass is NOT yet implemented! Use bindif to
+# bind to internal only nic. Patterns are also to come. See bindif note above
+#
+# UPnP (xbox/ps3 etc) you need to specify your IP in bindif= for it to work. You also
+# need llink.xml inside the skin's folder. For example, skin/aquarius_720/llink.xml
+#
+# Example line with all options is:
+#HTTP|port=8001|bindif=0|pin=1234|name=llink-daemon|user=Syabasi|pass=myIBox|BUFFER=16384
+#
+# The default is:
+HTTP|port=8001|pin=1234|name=llink
+
+#
+# AUTH|pattern
+#
+# If the PIN= argument is used with HTTP command, you can specify IP patterns
+# who will always behave as if a valid PIN had been entered.
+#
+# pattern is matched with IP address only (not hostname) and uses fnmatch syntax
+# (like Unix shell). Patterns line "192.168.11.10[123]" would match 101,102,103.
+#
+AUTH|pattern=127.0.0.1
+
+
+#
+# The SKIN used for all directory listings. Not that there are many.
+# It will send "head.html", followed by the "TYPE" files below, and
+# finally "tail.html". If you do something neat, please send it to me.
+#
+# SIZE_TYPE=human|bytes|none
+#
+# When replacing LLINK_FILE_SIZE, should it use human (5GB, 350MB) or
+# bytes (1234576) or none (space). Note if you want to have details in
+# the skin, use LLINK_DETAIL_SIZE which is always "bytes".
+#
+# PAGE_SIZE sets the number of lines a listing should send, by default.
+# You can not set it if you want everything in one long list. Note that
+# clients can always request from/to, which over-rides this value.
+#
+# PASSES specifies how many times should it loop over a directory listing,
+# usually 1 is sufficient, but if you are doing fancy things... it tags on
+# PASS number infront of the file names. Ie, head.html->2head.html,
+# line_dir.html->2line_dir.html. First pass is still head.html. (not 1head.html).
+#
+# Example line with all options is:
+# SKIN|path=./skin/default/|MaxNameLength=40
+#
+# The default is:
+#
+# My own hack job
+#SKIN|path=./skin/moon720/|MaxNameLength=50|SIZE_TYPE=human
+#
+# New Skin from Syabas
+#SKIN|path=./skin/aquarius_720/|PAGE_SIZE=10|SIZE_TYPE=human
+
+SKIN|path=./skin/aquarius_720/|PAGE_SIZE=10|SIZE_TYPE=human
+#SKIN|USERAGENT=*kamaishi*|path=./skin/kamaishi_skies/|PAGE_SIZE=10|SIZE_TYPE=human|PASSES=2|FREQ=300|MAX=2
+#SKIN|USERAGENT=UPNP|path=./skin/upnp/
+#RAND|FREQ=300|MAX=2
+#
+# Skin by PoPEye
+#SKIN|path=./skin/kamaishi_skies/|PAGE_SIZE=10|SIZE_TYPE=human|PASSES=2
+#RAND|FREQ=300|MAX=2
+#
+# Skin by dc11ab
+#SKIN|path=./skin/blackskin720/|PAGE_SIZE=10|SIZE_TYPE=human
+#RAND|FREQ=300|MAX=31
+#
+#Skin by Mikesv
+#SKIN|path=./skin/nmt/|PAGE_SIZE=10|SIZE_TYPE=human
+SKIN|USERAGENT=*x480*|path=./skin/SD_nmt/|PAGE_SIZE=10|SIZE_TYPE=human
+#
+# New Skin from NC
+#SKIN|path=./skin/clterm720/|PAGE_SIZE=10|SIZE_TYPE=human
+
+# UPnP skin
+#TYPE|name=UPNP-XML|cmd=redirect|ext=?llink.xml|ignore=*|filename=.|args=skin/upnp/
+
+
+#
+# TYPE
+#
+# Define types of movies. This is to match a filename, to a
+# HTML template file. So that "*.mpg" files, use "lines_movies.html"
+# when producing HTML for the DVD Player.
+# NOTE: This is "in ORDER". The first/top match here is used. End this
+# list with "ext=*" and "name=unknown", or, blank if you wish not
+# to display unknown types.
+#
+# See also the "mime.types" file, although my DVDPlayer seems to ignore
+# "Content-Type:" tag.
+#
+# Example line with all options is:
+# TYPE|name=Movies|ext=*.mpg/*.mpeg/*.avi/*.wmv/*.asf|filename=line_movie.html|menu=menu.html
+#
+
+# Separators. If you require extra HTML every 5th directory listing, as
+# and example, we do this with special TYPE entry. This need to be before any
+# File extention mappings. Note it is sent before item "X" so if you want 5
+# entries, then a separator, the value to use is "6".
+# TYPE|name=Separator|ext=NA|count=6|ignore=*|filename=separator.html
+
+# Movie types
+TYPE|name=Movies|ext=*.mpg/*.mpeg/*.avi/*.wmv/*.mp4/*.vob/*.ifo/*.ts/*.flv/*.mkv/*.tp/*.mov/*.m2ts/*.evo/*.m4v/*.asf/*.h264|upnp_type=object.item.videoItem|filename=line_movie.html
+
+# Music types
+TYPE|name=Music|ext=*.mp3/*.wav/*.ogg/*.wma/*.flac|upnp_type=object.item.audioItem|filename=line_music.html
+
+# If you are using JUKEBOX style skin, you probably do not want to add .jpg .png
+TYPE|name=Photo|ext=*.jpg/*.png/*.jpeg|upnp_type=object.item.imageItem|filename=line_photo.html
+# Want music with your photos? Set args=/directory and it will play all
+# inside said directory.
+#TYPE|name=Photo|ext=*.jpg/*.png/*.jpeg|filename=line_photo.html|args=/mp3/VA-Barnyard-OST-2006-EGM/
+
+# Default entry for directory
+TYPE|name=Directory|ext=NA|upnp_type=object.container.storageFolder|filename=line_dir.html
+#TYPE|name=Directory|ext=NA|ignore=Sample|filename=line_dir.html
+
+# Unrar on the fly? Match *.rar, but ignore anything not .part01.rar
+#
+# Included unrar-seek
+# Windows
+#TYPE|name=RarDirectory|ext=*.part1.rar/*.part01.rar/*.part001.rar/*.part0001.rar|filename=line_dir.html|cmd=unrar|args=unrar.exe
+#TYPE|name=RarDirectory|ext=*.rar|ignore=*.part?.rar/*.part??.rar/*.part???.rar/*.part????.rar|filename=line_dir.html|cmd=unrar|args=unrar.exe
+TYPE|name=RarDirectory|ext=*.part1.rar/*.part01.rar/*.part001.rar/*.part0001.rar|filename=line_dir.html|cmd=unrar|args=./unrar
+TYPE|name=RarDirectory|ext=*.rar|ignore=*.part?.rar/*.part??.rar/*.part???.rar/*.part????.rar|filename=line_dir.html|cmd=unrar|args=./unrar
+
+TYPE|name=Playlists|ext=*.pls/*.m3u|upnp_type=object.container.playlistContainer|filename=line_playlist.html
+
+
+# If you want unknown files to show up, uncomment the next line. If
+# you want them hidden, comment-out the next line.
+# TYPE|name=unknown|ext=*|filename=line_unknown.html
+
+#
+# Re-direct. You can also send certain file lookups to check an alternate
+# directory. Most commonly a common subtitle-directory.
+# "filename" needs just be defined, it is otherwise not used. "args" should
+# be the new directory name.
+TYPE|name=subtitles|cmd=redirect|ext=*.srt/*.sub/*.smi/*.ssa|ignore=*|upnp_type=object.item.textItem|filename=.|args=~/Subtitles
+
+#
+# Want to redirect the XML files?
+#
+#TYPE|name=extra|cmd=redirect|ext=*.xml/*.jpg|ignore=*|filename=.|args=/Users/lundman/tmp/
+
+# Do you want menu?
+TYPE|name=Menu|ext=NA|ignore=*|filename=menu.html
+TYPE|name=DirectoryMenu|ext=NA|ignore=*|filename=menu_dir.html
+#TYPE|name=Menu|ext=*.iso|ignore=*|filename=menu_iso.html
+
+# Handle ISO and IMG files internally?
+# It is optional to use "VIDEO_TS" directory names here as well, but it
+# is included by default so that decryption can work, and DVDREAD_MERGE works.
+#TYPE|name=libdvdread|ext=*.iso/*.img/*.toast/VIDEO_TS|filename=line_dir.html|cmd=dvdread
+
+TYPE|name=DVD_Directory|ext=*.iso/*.img/*.toast/VIDEO_TS|filename=line_dir.html|cmd=unrar|args=./undvd
+
+#TYPE|name=MMS_Directory|ext=*.mms|filename=line_dir.html|cmd=unrar|args=../unmms/unmms
+
+
+# iMDb filtering of names
+# These patterns are fnmatch, so wildcards can be used, but the name is
+# already split into words split by space/-/_/.
+IMDB|host=www.imdb.com|strip=dvdrip/samplefix/dvdivx/dvdivx4/dvdivx5/divx/xvid/limited/ac3/stv/720p/hddvd/x264/bluray/unrated/1080p/1080i/1080/hdtv/r5/hd/720/dvdscr/dvd/cd1/cd2/retail/ws/repack/mkv/jpg/png/avi/vob/subs/subbed|
+
+
+#
+# For those who want to define a RAND set of images, or named, you
+# can define that here
+# RAND|FREQ=300|MAX=5
+# would generate a new random value every 300 seconds, or 5 minutes, of values
+# of 1,2,3,4,5. When replaced with macro, it leaves "rand3" for example, so
+# if can be used with img src="background_<!--LLINK_RAND-->.jpg" to be
+# replaced with img src="background_rand3.jpg".
+#
+# RAND|FREQ=300|MAX=5
+#
+
+#
+# Various Configuration Options to modify the behavior of certain commands.
+#
+# DVDREAD default is to split .VOBs into 1GB parts. If you set it to
+# "MERGE" it will make one giant VOB instead.
+OPT|DVDREAD_MERGE=1
+# Set "NOTSDIR" if you wish to have no top level "VIDEO_TS" directory
+OPT|DVDREAD_NOTSDIR=1
+# *.ISO files in RARs should be handled by libdvdread?
+OPT|DVDREAD_RARISO=1
+
+# Do you want to see RAR files, and expand them like directories, or
+# Do you want RAR files to be expanded automatically, and directory show
+# the contents?
+OPT|EXPAND_RAR=1
+
+# Do you want to see ISO files, and expand them like directories, or
+# Do you want ISO files to be expanded automatically, and directory show
+# the contents?
+OPT|EXPAND_ISO=1
+
+# Send index.html pages? If a directory contains an "index.html" file,
+# should llink send it instead of the default behavior of listing the
+# contents. This enables "static"-content-jukebox skins to work.
+OPT|SEND_INDEX=index.htm
+
+# Delete options, be careful here as anyone on your network could issue these
+# commands. pattern might not lock connections enough, so we should add a
+# match to HTTP line.
+# YES = Always allow operation, STRONGLY DISCOURAGED. Use PIN!
+# NO  = Always deny operation
+# PIN = Allow operation after valid PIN input. Your IP is registered for 15mins
+#
+# DEL_DIR=YES, DEL_RECURSIVE=NO : Will only let deletion of empty directories.
+# DEL_DIR=YES, DEL_RECURSIVE=YES: Will delete the directory-tree.
+#
+OPT|DEL_FILE=PIN
+OPT|DEL_DIR=PIN
+# I myself am not entirely confident with Delete-Recursive. Use it with care.
+OPT|DEL_RECURSIVE=PIN
+#
+OPT|UNRAR=PIN
+
+#
+# New sorting options. Define as many sorting styles as wanted, and llink
+# will cycle them when requested to change. First one is the default way.
+#
+# Default line is:
+# SORT| by name | newest first | by reverse name | oldest first
+#
+# The list flags are:
+#
+#  -t  Sort list in date order
+#  -N  Sort list in name order
+#  -r  Reverse sorting order
+#  -D  Sort directories before files. (Like Windows)
+#  -s  Sort list in size order
+#  -C  Case insensitive sorting. (Like Windows)
+#  -a  Show dot-files
+#  -W  Show directory content size instead of block count (expensive)
+#  -G  If found ".genre" file, display this instead of group field.
+#
+#SORT|SET="-CND"|SET="-Ct"|SET="-CNDr"|SET="-Ctr"
+SORT|SET="-WCND"|SET="-WCt"|SET="-WCNDr"|SET="-WCtr"
+
+
+#
+# VISITED MEDIA DB
+#
+# Define this if you want llink to attempt to display media that it thinks
+# has already been watched. It is stored in a DB file.
+# MINTIME=sec : Minimum time a media file needs to have played to be considered
+# as watched. This is to rule out querying everything.
+# PERCENT=int : Minimum bytes sent percentage of total media size to be
+# considered watched.
+# IPNAME=1   : Change FILE= name based on IP access is from, changing semantics
+#              from one global DB for all, to one DB per IP.
+# WATCHED=/path : Also create "/path/$filename.watched" empty files for YAMJ's
+#               : watched "database" directories.
+#VISITED|FILE=llink.bdb|MINTIME=0|PERCENT=50|IPNAME=1|WATCHED=/tmp/
+VISITED|FILE=llink.bdb|MINTIME=0|PERCENT=50|IPNAME=1
+
+
+# USER SCRIPTS
+#
+# For the advanced users, you can define scripts to execute when the CGI part
+# of the URI asks for it, with the first argument as the item selected.
+# For example, something like:
+# <a href=<!--LLINK_CURRENT_DIRECTORY_URL-->/&myscript=<!--LLINK_FILE_URL-->
+#
+# If the script sends output starting with "STATUS: " the STATUS_MESSAGE
+# is updated in llink.
+#
+# If you set PIN=yes the script can only be executed after valid PIN input.
+#
+# Do remember to make the script executable (chmod 755 myscript.sh on Unix)
+#
+#SCRIPT|name=myscript|path=./myscript.sh|PIN=NO
+
+
+#
+# Your root device(s). I allow you to specify the root as you want it
+# and as many roots as you would like.
+#
+# NOTE: If you define mutiple roots, and those top level directories
+# have the same named file and/or directory, you will only be able to
+# access the first defined one. Please rename the clashes, or, put them
+# into a sub-directory. (Or don't use multiple roots)
+#
+# You can also use the "SUBDIR" tag to alias a ROOT to a different name.
+#
+# FLAGS type is no longer used. See the SORT option above.
+#
+# Example line with all options is:
+#ROOT|path=/tmp/
+#ROOT|path=c:/shared/
+#
+# The default is:
+#ROOT|path=e:/download/
+#ROOT|path=z:/
+#ROOT|path=/Users/lundman/ftp/data/
+#ROOT|path=/Users/lundman/ftp/data/tmp/incoming2/
+#ROOT|path=/Users/lundman/netbsd/mp3/|SUBDIR=MyMusic
+#ROOT|path=/Volumes/Unsafe/Downloads/
+ROOT|path=~/Movies|subdir=Movies
+ROOT|path=~/Music|subdir=Music
+ROOT|path=~/Pictures|subdir=Pictures
+
+# Device ROOT. Example, USB/CDRom device etc. You probably want to use it
+# with SUBDIR to give it a name.
+#ROOT|path=/dev/disk1|DVDREAD|subdir=DVD
+
+# Unix derivatives can use ~username to expand to home directories.
+#ROOT|path=~lundman/Movies|subdir=Home
+
+# If you use ZFS, you can auto-export any filesystem with a certain
+# attribute set.  For example: zfs set net.lundman:sharellink=on
+# zpool1/media 
+#ROOT|ZFS=net.lundman:sharellink|PATH=/usr/sbin/zfs
+
+#
+# You can define a HTTP URL destination that is "listed" in the ROOT volume
+# It is sent "blind" with no checks or connections by llink.
+#ROOT|URL=http://www.google.com/|path=NA
+
+#
+# Alternatively, llink can take URLS, connect and parse for media URLs
+# to present # as local media to your device. The URLs can be sent
+# as-is, or you can also chose # PROXY mode where llink will do the
+# connection and relay to player.
+#
+#ROOT|HTTP=http://www.hd-trailers.net/blog/feed/|path=xtrailers
+#ROOT|HTTP=http://www.hd-trailers.net/blog/feed/|path=xtrailers|PROXY
+#HTTP ROOTs must be last.

@@ -1,0 +1,6 @@
+
+llink uses Cyberlink for C, clinkc, library for UPNP support. The current
+version out (2.30) is not quite sufficient for usage. Currently for those
+who wishes to compile in upnp support needs to get SVN sources for clinkc/trunk.
+
+

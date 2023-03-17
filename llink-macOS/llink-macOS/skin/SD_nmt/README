@@ -1,0 +1,30 @@
+
+			NMT THEME
+			=========
+
+This skin uses the images from the standard Popcorn Hour / NMT theme.
+Since these images are probably copyrighted you need to get them
+from the source:
+
+http://www.popcornhour.com/download/_theme_.zip
+
+Download this file somewhere, say /tmp. Then, extract the zip archive
+and copy the sd/ images to the nmt-img/ subdirectory of this theme.
+Using UNIX unzip, you can do this with:
+
+	$ unzip -j -d nmt-img /tmp/_theme_.zip '_theme_/sd/*'
+
+Now update llink.conf to use this theme. This theme uses line_lastline.html,
+so don't forget to uncomment the TYPE|name=Lastline setting in llink.conf.
+
+You can use the  following keys with this theme:
+
+Home		Go to root of the server
+Return		One directory up
+Left / PgUp	One page up
+Right / PgDown	One page down
+Yellow		Play all music files in this directory
+Blue		View all image files in this directory
+
+Miquel van Smoorenburg.
+

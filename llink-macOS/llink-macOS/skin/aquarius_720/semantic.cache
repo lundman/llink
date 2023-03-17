@@ -1,0 +1,88 @@
+;; Object aquarius_720/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "aquarius_720/"
+  :tables (list
+   (semanticdb-table "menu.html"
+    :major-mode 'html-mode
+    :tags '(("var ar = new Array('1000', '35', '93', '153' , '211' , '270' , '329' , '388', '447' , '506' , '565');
+	function hide(){
+	document.styleSheets[0].cssRules[0].style.top=ar[0];
+	};
+	function show(x){
+	document.styleSheets[0].cssRules[0].style.top=ar[x];
+	}" section nil nil [65 114]) ("var ar = new Array('1000', '35', '93', '153' , '211' , '270' , '329' , '388', '447' , '506' , '565');
+	function hide(){
+	document.styleSheets[0].cssRules[0].style.top=ar[0];
+	};
+	function show(x){
+	document.styleSheets[0].cssRules[0].style.top=ar[x];
+	}" section nil nil [114 762]) ("function popup(){
+                document.styleSheets[0].cssRules[0].style.visibility=\"visible\";
+                document.styleSheets[0].cssRules[1].style.visibility=\"visible\";
+                document.styleSheets[0].cssRules[2].style.visibility=\"visible\";
+                document.styleSheets[0].cssRules[3].style.visibility=\"visible\";
+        }
+        function close(){
+                document.styleSheets[0].cssRules[0].style.visibility=\"hidden\";
+                document.styleSheets[0].cssRules[1].style.visibility=\"hidden\";
+                document.styleSheets[0].cssRules[2].style.visibility=\"hidden\";
+                document.styleSheets[0].cssRules[3].style.visibility=\"hidden\";
+        }" section nil nil [762 1968]) ("1" section (:members (("Play" section nil nil [3564 4263]) ("Delete" section nil nil [4263 4990]) ("Unrar" section nil nil [4990 5690]) ("Mount" section nil nil [5690 6403]) ("Enter PIN" section nil nil [6403 7121]) ("Clear PIN" section nil nil [7121 7831]) ("Quit llink" section nil nil [7831 8550]) ("Close" section nil nil [8550 8632]) ("Close" section nil nil [8632 8714]) ("Close" section nil nil [8714 8775]) ("Close" section nil nil [8775 8839]) ("Close" section nil nil [8839 8896]) ("Close" section nil nil [8896 8951]) ("Close" section nil nil [8951 9138]) ("Close" section nil nil [9138 9141]))) nil [1968 1974]))
+    :file "menu.html"
+    :pointmax 9257
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "line_dir.html"
+    :major-mode 'html-helper-mode
+    :tags 'nil
+    :file "line_dir.html"
+    :pointmax 1097
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "line_movie.html"
+    :major-mode 'html-helper-mode
+    :tags 'nil
+    :file "line_movie.html"
+    :pointmax 1082
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "line_music.html"
+    :major-mode 'html-mode
+    :tags '(("" section nil nil [418 421]))
+    :file "line_music.html"
+    :pointmax 1035
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "line_playlist.html"
+    :major-mode 'html-helper-mode
+    :tags 'nil
+    :file "line_playlist.html"
+    :pointmax 1081
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "line_photo.html"
+    :major-mode 'html-mode
+    :tags '(("" section nil nil [419 422]))
+    :file "line_photo.html"
+    :pointmax 1097
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "Makefile.am"
+    :major-mode 'makefile-automake-mode
+    :tags 'nil
+    :file "Makefile.am"
+    :pointmax 1087
+    :unmatched-syntax '((thing 1074 . 1087) (thing 1073 . 1087) (thing 1051 . 1073) (thing 1050 . 1072) (thing 1017 . 1039) (thing 1016 . 1038) (thing 993 . 1016) (thing 992 . 1015) (thing 958 . 981) (thing 957 . 980) (thing 937 . 957) (thing 936 . 956) (thing 917 . 926) (thing 916 . 925) (thing 902 . 916) (thing 901 . 915) (thing 887 . 901) (thing 887 . 900) (thing 877 . 886) (thing 877 . 886) (thing 859 . 868) (thing 859 . 868) (thing 844 . 858) (thing 844 . 858) (thing 828 . 843) (thing 828 . 843) (thing 811 . 827) (thing 811 . 827) (thing 780 . 800) (thing 780 . 800) (thing 764 . 779) (thing 764 . 779) (thing 749 . 763) (thing 749 . 763) (thing 729 . 741) (thing 729 . 741) (thing 713 . 728) (thing 713 . 728) (thing 694 . 712) (thing 694 . 712) (thing 678 . 693) (thing 678 . 693) (thing 656 . 670) (thing 656 . 670) (thing 638 . 655) (thing 638 . 655) (thing 623 . 637) (thing 623 . 637) (thing 607 . 622) (thing 607 . 622) (thing 581 . 597) (thing 581 . 597) (thing 560 . 580) (thing 560 . 580) (thing 544 . 559) (thing 544 . 559) (thing 522 . 536) (thing 522 . 536) (thing 509 . 521) (thing 509 . 521) (thing 493 . 508) (thing 493 . 508) (thing 474 . 492) (thing 474 . 492) (thing 452 . 467) (thing 452 . 467) (thing 437 . 451) (thing 437 . 451) (thing 419 . 436) (thing 419 . 436) (thing 403 . 418) (thing 403 . 418) (thing 375 . 394) (thing 375 . 394) (thing 359 . 374) (thing 359 . 374) (thing 349 . 358) (thing 349 . 358) (thing 337 . 348) (thing 337 . 348) (thing 316 . 328) (thing 316 . 328) (thing 304 . 315) (thing 304 . 315) (thing 291 . 303) (thing 291 . 303) (thing 271 . 290) (thing 271 . 290) (thing 242 . 260) (thing 242 . 260) (thing 226 . 241) (thing 226 . 241) (thing 210 . 225) (thing 210 . 225) (thing 190 . 203) (thing 190 . 203) (thing 170 . 189) (thing 170 . 189) (thing 149 . 169) (thing 149 . 169) (thing 137 . 148) (thing 137 . 148) (thing 117 . 129) (thing 117 . 129) (thing 107 . 116) (thing 107 . 116) (thing 86 . 106) (thing 86 . 106) (thing 68 . 85) (thing 68 . 85) (thing 39 . 58) (thing 39 . 58) (thing 26 . 38) (thing 26 . 38) (thing 14 . 25) (thing 14 . 25) (thing 12 . 13) (thing 12 . 13) (thing 2 . 12) (thing 2 . 12))
+    )
+   (semanticdb-table "head.html"
+    :major-mode 'html-helper-mode
+    :tags 'nil
+    :file "head.html"
+    :pointmax 2319
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

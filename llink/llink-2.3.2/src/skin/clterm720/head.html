@@ -1,0 +1,166 @@
+<html>
+<head>
+<title><!--LLINK_SERVER_NAME--></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	.menu {
+		font-size:22px;
+		color:#22FF00;
+		font-weight:bold
+	}
+	.menu a td {
+		font-size:22px;
+		color:#22FF00;
+		font-weight:bold
+		width: 100px;
+	}
+	.server {
+		font-size:20px;
+		color:#22FF00;
+		font-weight:bold
+	}
+
+	/* 
+	 * classes for line_*.html.
+	 * width of background image: 730px.
+	 * width (tvid + icon + (dir|{file,fsize}) + filler < 730 !
+	 *
+	 */ 
+	.line {
+		font-size: 20px;
+		color: #22FF00;
+		font-weight: bold
+	}
+	.line table {
+		width: 730px;
+		font-size: 20px;
+		color: #22FF00;
+		font-weight: bold
+	}
+	.line_tvid {
+		width: 50px;
+		height: 46px;
+	}
+	.line_icon {
+		width: 60px;
+	}
+	.line_iconsz {
+		width: 35px;
+		height: 35px;
+	}
+	/* 
+	 * choose line_dir and line_file widths so that the total
+	 * stays about 10px below the width of the table
+	 *
+	 */ 
+	.line_dir {
+		white-space: nowrap;
+		overflow: hidden;
+		width: 570px;
+	}
+	.line_file {
+		width: 470px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.line_fsize {
+		font-size:14px;
+		color:#22FF00;
+		width: 100;
+	}
+	.line_filler {
+		width: 35px;
+	}
+</style>
+<script type="text/javascript">
+	function loc(x){
+		var pageUrl=x;
+		document.getElementById('istab').attributes[0].nodeValue=pageUrl.toString();
+	}
+	function hilite_on(x){
+		var itemID=x;
+		document.getElementById(itemID).setAttribute("background",'/clt720img/list_bar_focused.png');
+	}
+	function hilite_off(x){
+		var itemID=x;
+		document.getElementById(itemID).setAttribute("background",'/clt720img/list_bar.png');
+	}
+</script>
+		<meta SYABAS-FULLSCREEN>
+		<meta SYABAS-PLAYERMODE="msp">
+</head>
+
+<body background="/clt720img/my-bg.png" marginheight=40 bgcolor="#000000"
+	link="#22FF00" alink="#22FF00" vlink="#AAFF00" color="#22FF00"
+	onloadset="L<!--LLINK_PAGE_FOCUS-->" focushighlight="transparent">
+
+<table border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td width="200" valign="top">
+	<table border=0 cellspacing=0 cellpadding=0>
+	<tr>
+	<td height="195" valign="top" align="right"></td></tr>
+	<tr>
+	<td align="right" valign="bottom">
+		<img src="/clt720img/movie-music.png" width="105"></td>
+	</tr>
+	<tr>
+	<td align="right" height=25 valign="top" class="server">
+		//<!--LLINK_SERVER_NAME--></td></tr>
+	<tr>
+	<td height="15"></td></tr>
+	<tr>
+	<td align="right">
+		<table border=0 cellspacing=0 cellpadding=0 class="menu">
+
+		<tr>
+		<td valign="middle" align="right">
+		<a href="<!--LLINK_PARENT_DIRECTORY_URL-->"
+			tvid="red">Up</a>
+		</td>
+		<td width = "15">&nbsp;</td>
+		<td width = "15" bgcolor = "red">&nbsp;</td>
+		</tr>
+		<tr><td height="15"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right" width="140">
+		<a href="<!--LLINK_CURRENT_DIRECTORY_URL-->"
+			tvid = "green">Reload</a>
+		</td>
+		<td width = "15">&nbsp;</td>
+		<td width = "15" bgcolor = "green">&nbsp;</td>
+		</tr>
+		<tr><td height="15"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right" width="140">
+		<a href="javascript: myprev()" tvid="yellow">Prev page</a>
+		</td>
+		<td width = "15">&nbsp;</td>
+		<td width = "15" bgcolor = "yellow">&nbsp;</td>
+		</tr>
+		<tr><td height="15"></td></tr>
+
+		<tr>
+		<td valign="middle" align="right" width="140">
+		<a href="javascript: mynext()" tvid="blue">Next page</a>
+		</td>
+		<td width = "15">&nbsp;</td>
+		<td width = "15" bgcolor = "blue">&nbsp;</td>
+		<tr><td height="15"></td></tr>
+		<tr>
+		<td valign="middle" align="right">
+			&nbsp;
+		</td>
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+<td height=656 width=60 background="/clt720img/divider.png"></td>
+<td width="730" valign="top">
+	<table border=0 cellspacing=0 cellpadding=0 class="line">
+	<tr><td height="25"></td></tr>
+

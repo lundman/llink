@@ -1,0 +1,16 @@
+;; Object upnp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "upnp/"
+  :tables (list
+   (semanticdb-table "Makefile.am"
+    :major-mode 'makefile-automake-mode
+    :tags 'nil
+    :file "Makefile.am"
+    :pointmax 67
+    :unmatched-syntax '((thing 50 . 58) (thing 41 . 49) (thing 32 . 40) (thing 23 . 31) (thing 13 . 22) (thing 12 . 13) (thing 2 . 12))
+    )
+    )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

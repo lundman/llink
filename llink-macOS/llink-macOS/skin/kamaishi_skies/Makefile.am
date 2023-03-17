@@ -1,0 +1,16 @@
+
+EXTRA_DIST=2head.html 2line_dir.html 2line_iso.html 2line_movie.html	\
+           2line_movie_old.html 2line_music.html 2line_photo.html		\
+           2line_playlist.html 2tail.html README.txt Thumbs.db			\
+           block_bg_black.png block_bg_white.png						\
+           block_highlight_black.png block_highlight_white.png			\
+           doc_icon.png folder_icon.png generic.jpg head.html			\
+           home_off.png home_on.png images_icon.png info_bg_black.png	\
+           info_bg_white.png line_dir.html line_iso.html				\
+           line_movie.html line_music.html line_photo.html				\
+           line_playlist.html music_icon.png nav_logo_black.png			\
+           nav_logo_white.png rand1.jpg rand2.jpg rand3.jpg rand4.jpg   \
+		   rand5.jpg rand6.jpg rand8.jpg tail.html						\
+           transparent.png video_icon.png menu.html menu_dir.html
+
+
