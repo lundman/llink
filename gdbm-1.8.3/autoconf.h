@@ -29,7 +29,7 @@
 #define HAVE_LIBDBM 1
 
 /* Define to 1 if you have the `ndbm' library (-lndbm). */
-#define HAVE_LIBNDBM 1
+/* #undef HAVE_LIBNDBM */
 
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
@@ -67,8 +67,7 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
 /* Name of package */
